@@ -7,13 +7,13 @@ class Marcas:#aqui todos los metodos de las ventanas/ funcionalidad de las venta
     db_name = 'database.db'
 
 
-    def __init__(self,window):
-        self.wind = window # wind almacena mi ventana en una propiedad
+    def __init__(self, ventana1):
+        self.wind = ventana1 # wind almacena mi ventana en una propiedad
         self.wind.title('GESTOR DE MARCAS')
 
         ## CREAR UN CONTENEDOR FRAME
         frame = LabelFrame(self.wind, text='REGISTRO DE MARCAS')
-        frame.grid(row=0, column=0, columnspan=1, pady=10)
+        frame.grid(row=0, column=0, columnspan=3, pady=20)
 
         ## Ingreso de Nombre de la Marca
         Label(frame, text = 'Nombre: ').grid(row=1, column=0)
@@ -65,12 +65,11 @@ class Marcas:#aqui todos los metodos de las ventanas/ funcionalidad de las venta
         self.tree.heading('4', text='Slogan', anchor=CENTER)
         self.tree.heading('5', text='% Aceptacion', anchor=CENTER)
 
-        #frame.grid(row=0, column=0, columnspan=1, pady=2)
         ## BOTON ELIMINAR FILA
-        ttk.Button(text='ELIMINAR', command=self.elimnar_marca).grid(row=1, column=1, sticky=W+E)
+        ttk.Button(text='ELIMINAR', command=self.elimnar_marca).grid(row=10, column=0, sticky=W+E)
 
         ## BOTPON EDITAR FILA
-        ttk.Button(text='EDITAR', command=self.editar_marca).grid(row=4, column=1, sticky=W+E)
+        ttk.Button(text='EDITAR', command=self.editar_marca).grid(row=10, column=1, sticky=W+E)
 
         # LLENAR TABLA
         self.get_products()
@@ -230,6 +229,6 @@ class Marcas:#aqui todos los metodos de las ventanas/ funcionalidad de las venta
 
 
 if __name__ == '__main__':#comprovacion(if) para la aplicacion principal
-    window = Tk()
-    application = Marcas(window)#Instancia la clase Productmy enviar el parametro windows
-    window.mainloop()
+    ventana1 = Tk()
+    application = Marcas(ventana1)#Instancia la clase Productmy enviar el parametro windows
+    ventana1.mainloop()
