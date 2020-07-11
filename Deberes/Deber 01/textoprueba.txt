@@ -1,0 +1,5 @@
+Hola Mundo
+Saludos desde CCTMexico
+swsx
+numero = 2
+deportes = ['wsx', 'wsxwsxws']
